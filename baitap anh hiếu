@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hang hoa</title>
+</head>
+<body>
+<h2 align="center">THÔNG TIN HÀNG HÓA</h2>
+  <h4>
+    Phân loại : <select name="oftion">
+     <option value="đồ gia dụng">đồ gia dụng</option>
+     <option value="thủy , hải sản">thủy , hải sản</option>
+     <option value="điện tử / công nghệ">điện tử / công nghệ</option>
+     <option value="nông sản">nông sản</option>
+     <option value="may mặc">may mặc</option>
+     <option value="khác">khác</option></select>
+  </h4><br/>
+<fieldset>
+    Tên mặt hàng : <input type="text" value="chảo pubg" name="Name"><br/><br/>
+    Số lượng : <input type="text" value="" name="Number"><br/><br/>
+    Xuất xứ  : <input type="radio" name="from" value="vietnam" checked>trong nước
+               <input type="radio" name="from" value="nn">nhập khẩu
+               <input type="radio" name="from" value="all">tất cả<br><br>
+    Giá thành :<input type="text" value="299000">đồng<br><br>
+    Tình trạng :<input type="checkbox" name="mới" value="new">mới
+                <input type="checkbox" name="đã qua sử dụng" value="old">đã qua sử dụng
+                <input type="checkbox" name="khác" value="dif">khác<br/><br>
+    Thêm mô tả<br>
+    <textarea name="edit" cols="30" rows="10">vui lòng nhập </textarea>
+</fieldset><br>
+<input type="submit" value="xác nhận">
+<input type="reset" value="hủy">
+</body>
+</html>
