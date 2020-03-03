@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="tinhab()">
+<script>
+    let i = 10;
+    let f = 20.5;
+    let b = true;
+    let s = "Hà Nội";
+    document.write('i=' + i);
+    document.write('</br>');
+    document.write('f=' + f);
+    document.write('</br>');
+    document.write('b=' + b);
+    document.write('</br>');
+    document.write('s=' + s);
+    document.write('</br>');
+    document.write('</br>');
+    let width = 20;
+    let heith = 10;
+    let area = width + heith;
+    document.write('area=' + area);
+    document.write('</br>');
+    document.write('</br>');
+    function tinhab() {
+        let x = prompt('a=');
+        x = parseInt(x);
+        let y = prompt('b=');
+        y = parseInt(y);
+        if (x % y === 0) {
+            alert('a là bội của b')
+        } else {
+            alert('a không phải là bội của b')
+        }
+    }
+</script>
+</body>
+</html>
