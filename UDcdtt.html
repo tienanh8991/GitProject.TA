@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhap">Amount
+<select id="currency1">
+    <option value="vn">VND</option>
+    <option value="usa">USD</option>
+    <option value="eu">EURO</option>
+</select>
+<select id="currency2">
+    <option value="usa">USD</option>
+    <option value="vn">VND</option>
+    <option value="eu">EURO</option>
+</select>
+<button onclick="cdoi()">Convert</button>
+<!--<input type="reset" placeholder="reset">-->
+<div id="vndusd"></div>
+<script>
+    function cdoi() {
+        let x = document.getElementById("nhap").value;
+        x = parseInt(x);
+        let y = document.getElementById("currency1");
+        let z = document.getElementById("currency2");
+        if (y.value === "vn" && z.value === "usa") {
+            document.getElementById("vndusd").innerHTML = "result :" + (x * (0.000043))
+        } else if (y.value === "vn" && z.value === 'vn') {
+            document.getElementById("vndusd").innerHTML = "result :" + x
+        } else if (y.value === 'vn' && z.value === 'eu') {
+            document.getElementById("vndusd").innerHTML = "result :" + (x * (0.000039))
+        } else if (y.value === 'usa' && z.value === 'vn') {
+            document.getElementById("vndusd").innerHTML = "result :" + (x * (23.20541))
+        } else if (y.value === 'usa' && z.value === 'usa') {
+            document.getElementById("vndusd").innerHTML = "result :" + x
+        } else if (y.value === 'usa' && z.value === 'eu') {
+            document.getElementById("vndusd").innerHTML = "result :" + (x * (0.9))
+        } else if (y.value === 'eu' && z.value === 'eu') {
+            document.getElementById("vndusd").innerHTML = "result :" + x
+        } else if (y.value === 'eu' && z.value === 'vn') {
+            document.getElementById("vndusd").innerHTML = "result :" + (x * (25.76473))
+        } else
+            document.getElementById("vndusd").innerHTML = "result :" + (x * (1.11))
+    }
+</script>
+</body>
+</html>
