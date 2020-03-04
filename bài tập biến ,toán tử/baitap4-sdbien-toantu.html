@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<input type="text" id="nhap">
+<button onclick="chuviht()">tinh</button>
+<div id="area"></div>
+<div id="ketqua"></div>
+<script>
+    function chuviht() {
+        let x = document.getElementById("nhap").value;
+        x = parseInt(x);
+        document.getElementById("area").innerHTML = "chu vi hinh tron la :" + (2 * x * Math.PI);
+        document.getElementById("ketqua").innerHTML="voi ban kinh la :"+x;
+    }
+</script>
+</body>
+</html>

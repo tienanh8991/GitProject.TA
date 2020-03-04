@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th style="color: coral">Caculator</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="numb1"></td>
+        <td><input type="text" id="numb2"></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="caculation('1')" style="color: brown">Addition</button>
+            <button onclick="caculation('2')" style="color: brown">Subtriction</button>
+        </td>
+        <td>
+            <button onclick="caculation('3')" style="color: dimgray">Muntilipcation</button>
+            <button onclick="caculation('4')" style="color: dimgray">Division</button>
+        </td>
+    </tr>
+</table>
+<div id="tinhtoan" style="color: coral"></div>
+<script>
+    function caculation(C) {
+        let x = document.getElementById("numb1").value;
+        x = parseFloat(x);
+        let y = document.getElementById("numb2").value;
+        y = parseFloat(y);
+        let r;
+        switch (C) {
+            case ('1'):
+                r = x + y;
+                break;
+            case ('2'):
+                r = x - y;
+                break;
+            case ('3'):
+                r = x * y;
+                break;
+            case ('4'):
+                r = x / y;
+                break;
+        }
+        document.getElementById('tinhtoan').innerHTML = "kết quả bằng :" + r;
+    }
+
+    // sử dụng if/else với 1 hàm funcsion
+    // if (C === '1') {
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x + y);
+    // }else if (C==='2'){
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x - y);
+    // }else if (C==='3'){
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x * y);
+    // }else
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x / y);
+
+
+    //sử dụng 4 hàm funcsion :
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x + y);
+    // }
+    //
+    // function subtriction() {
+    //     let x = document.getElementById("numb1").value;
+    //     x = parseFloat(x);
+    //     let y = document.getElementById("numb2").value;
+    //     y = parseFloat(y);
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x - y);
+    // }
+    //
+    // function muntiplication() {
+    //     let x = document.getElementById("numb1").value;
+    //     x = parseFloat(x);
+    //     let y = document.getElementById("numb2").value;
+    //     y = parseFloat(y);
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x * y);
+    // }
+    //
+    // function division() {
+    //     let x = document.getElementById("numb1").value;
+    //     x = parseFloat(x);
+    //     let y = document.getElementById("numb2").value;
+    //     y = parseFloat(y);
+    //     document.getElementById("tinhtoan").innerHTML = "kết quả bằng :" + (x / y);
+    // }
+</script>
+</body>
+</html>
