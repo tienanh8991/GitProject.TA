@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-spacing: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+<table>
+    <tr>
+        <th>Tên Đăng Nhập</th>
+        <th>Mật Khẩu</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="username_id"></td>
+        <td><input type="password" id="pass_id"></td>
+    </tr>
+    <tr>
+        <td><button onclick="log_in()">Đăng nhập</button></td>
+    </tr>
+</table>
+</div>
+<script>
+    function log_in(){
+    let username = document.getElementById('username_id').value;
+    let passw = document.getElementById('pass_id').value;
+    if (username == "Admin") {
+        if (passw == "TheMaster")
+            alert("Wellcom !");
+        else if (passw == '' )
+            alert("Canceled");
+    } else if (username == '' )
+        alert("Canceld");
+    else alert("I Don't Know You")
+    }
+</script>
+</body>
+</html>
+
+
+
+
+

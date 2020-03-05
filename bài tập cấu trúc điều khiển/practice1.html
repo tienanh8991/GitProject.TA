@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let year = Number.parseInt(prompt('nhập số năm'));
+    if (year % 100 === 0) {
+
+        if (year % 400 === 0)
+            document.write(year + " là năm nhuận");
+        else document.write(year + " không phải là năm nhuận");
+    } else if (year % 4 === 0)
+        document.write(year + " là năm nhuận");
+    else document.write(year + " không phải là năm nhuận")
+</script>
+</body>
+</html>
