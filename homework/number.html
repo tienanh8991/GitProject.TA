@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function docso() {
+            let n = prompt("nhập số");
+            n = Number.parseInt(n);
+            alert(so9chuso(n));
+        }
+
+        function so1chuso(n) {
+            switch (n) {
+                case 0:
+                    return " không";
+                case 1:
+                    return " một";
+                case 2:
+                    return " hai";
+                case 3:
+                    return " ba";
+                case 4:
+                    return " bốn";
+                case 5:
+                    return " năm";
+                case 6:
+                    return " sáu";
+                case 7:
+                    return " bảy";
+                case 8:
+                    return " tám";
+                case 9:
+                    return " chín";
+
+            }
+        }
+
+        function so9chuso(n) {
+            let tramtrieu = Math.floor(n / 100000000);
+            let chuctrieu = Math.floor(n / 10000000) % 10;
+            let trieu = Math.floor(n / 1000000) % 10;
+            let tramnghin = Math.floor(n / 100000) % 10;
+            let chucnghin = Math.floor(n / 10000) % 10;
+            let nghin = Math.floor(n / 1000) % 10;
+            let tram = Math.floor(n / 100) % 10;
+            let chuc = Math.floor(n / 10) % 10;
+            let donvi = n % 10;
+            let srt = "";
+            srt += so1chuso(tramtrieu) + " trăm";
+            if (chuctrieu === 0){
+                srt += " linh";
+            }else
+            srt += so1chuso(chuctrieu) + " mươi";
+            if (trieu === 0){
+                srt += " triệu";
+            } else
+            srt += so1chuso(trieu) + " triệu";
+            srt += so1chuso(tramnghin) + " trăm";
+            if (chucnghin==0){
+                srt+=" linh";
+            }else
+            srt += so1chuso(chucnghin) + " mươi";
+            if (nghin==0){
+                srt +=" nghìn";
+            }else
+            srt += so1chuso(nghin) + " nghìn";
+            srt += so1chuso(tram) + " trăm";
+            if (chuc==0){
+                srt += " linh";
+            }else
+            srt += so1chuso(chuc) + " mươi";
+            if ( donvi==0){
+                srt += "";
+            }else if (donvi==1){
+                srt +=" mốt";
+            }else
+            srt += so1chuso(donvi);
+            return srt;
+        }
+
+        // srt += so1chuso(tramtrieu) + "trăm" + so1chuso(chuctrieu) + "mươi" + so1chuso(trieu) + "triệu" + so1chuso(tramnghin) + "trăm" + so1chuso(chucnghin) + "mươi" + so1chuso(nghin) + "nghìn" + so1chuso(tram) + "trăm" + so1chuso(chuc) + "mươi" + so1chuso(donvi);
+
+    </script>
+</head>
+<body>
+<button onclick="docso()">Nhap so</button>
+</body>
+</html>
