@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hang hoa</title>
+    <style>
+        table#t1 {
+            border: 2px solid black;
+            border-collapse: collapse;
+            border-spacing: 10px;
+            text-align: center;
+        }
+        table#t2 {
+            border-spacing: 10px;
+        }
+
+        #mydiv {
+            display: none;
+        }
+
+    </style>
+    <script>
+        function into() {
+            document.getElementById("mydiv").style.display = "block";
+        }
+
+        function unin() {
+            document.getElementById("mydiv").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+<h2 align="center">THÔNG TIN HÀNG HÓA</h2>
+<div style="text-align: right">
+    tài khoản
+    <input type="text">
+    mật khẩu
+    <input type="password" placeholder="*********">
+</div>
+<br>
+<div style="text-align: right">
+    <input type="submit" value="đăng nhập"></div>
+<table id="t2">
+    <tr>
+        <td>Phân loại</td>
+        <td>:</td>
+        <td><select name="oftion">
+            <option value="đồ gia dụng">đồ gia dụng</option>
+            <option value="thủy , hải sản">thủy , hải sản</option>
+            <option value="điện tử / công nghệ">điện tử / công nghệ</option>
+            <option value="nông sản">nông sản</option>
+            <option value="may mặc">may mặc</option>
+            <option value="khác">khác</option>
+        </select></td>
+    </tr>
+
+    <br/>
+</table>
+<fieldset style="padding: 20px">
+    <form action="#" method="p" id="mydiv">
+        <table>
+            <tr>
+                <td>Tên mặt hàng</td>
+                <td><input type="text" value="" name="Name"></td>
+            </tr>
+            <tr>
+                <td>Số lượng</td>
+                <td><input type="text" value="" name="Number"></td>
+            </tr>
+            <tr>
+                <td>Xuất xứ</td>
+                <td><input type="radio" name="from" value="vietnam" checked>trong nước
+                    <input type="radio" name="from" value="nn">nhập khẩu
+                    <input type="radio" name="from" value="all">tất cả
+                </td>
+            </tr>
+            <tr>
+                <td>Giá thành</td>
+                <td><input type="text" value="">đồng</td>
+
+            </tr>
+            <tr>
+                <td>Tình trạng</td>
+                <td><input type="checkbox" name="mới" value="new"checked>mới
+                    <input type="checkbox" name="đã qua sử dụng" value="old">đã qua sử dụng
+                    <input type="checkbox" name="khác" value="dif">khác
+                </td>
+            </tr>
+            <tr>
+                <td>Ngày sản xuất</td>
+                <td><input type="date" value="Ngày sản xuất"></td>
+            </tr>
+            <tr>
+                <td>Thêm mô tả</td>
+                <td><textarea name="edit" cols="30" rows="5" placeholder="vui lòng nhập"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="xác nhận"></td>
+                <td><input type="reset" value="hủy" onclick="unin()"></td>
+            </tr>
+            <input type="hidden" hidden>
+        </table>
+    </form>
+
+    <h4>Danh sách hàng hóa</h4>
+    <table id="t1" border="2">
+        <tr>
+            <th>Stt</th>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Xuất xứ</th>
+            <th>Số lượng</th>
+            <th>Giá thành</th>
+            <th>Tình trạng</th>
+            <th>thao tác</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>CV01</td>
+            <td>Chảo</td>
+            <td>Việt Nam</td>
+            <td>01</td>
+            <td>299000</td>
+            <td>Mới</td>
+            <td>Sửa/Xóa</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>BT01</td>
+            <td>Bếp Từ</td>
+            <td>Đài Loan</td>
+            <td>01</td>
+            <td>399000</td>
+            <td>Mới</td>
+            <td>Sửa/Xóa</td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>QS01</td>
+            <td>Quạt Phun Sương</td>
+            <td>Hàn Quốc</td>
+            <td>01</td>
+            <td>99000</td>
+            <td>Đã qua sử dụng</td>
+            <td>Sửa/Xóa</td>
+        </tr>
+    </table>
+    <br>
+    <button onclick="into()">Thêm</button>
+</fieldset>
+</body>
+</html>
