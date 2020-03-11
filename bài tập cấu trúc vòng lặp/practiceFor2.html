@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input_N">
+<button type="button" onclick="result()">Tính</button>
+<div id="show">
+    <script>
+        function result() {
+            let n = document.getElementById("input_N");
+            n = Number.parseInt(n.value);
+            let s = 0;
+            for (let i = 1; i < n; i++)
+                document.getElementById("show").innerHTML = "" + (s += i);
+        }
+
+    </script>
+</div>
+</body>
+</html>
