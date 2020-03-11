@@ -1,0 +1,19 @@
+table {
+    border: black 1px solid;
+    margin: 80px 500px;
+    width: 300px;
+    height: 400px;
+    background-color: antiquewhite;
+    font-style: inherit;
+}
+
+.butt {
+    width: 60px;
+    height: 40px;
+    color: chocolate;
+}
+
+.style-t {
+    width: 200px;
+    height: 45px;
+}
