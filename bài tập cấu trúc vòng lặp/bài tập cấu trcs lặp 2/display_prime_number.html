@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkPrimeNum(a) {
+        for (let i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function printPrimeNlist() {
+        let numbers = +prompt("nhập số lượng số cần in ra");
+        let count = 0;
+        let N = 2;
+        while (count < numbers) {
+            if (checkPrimeNum(N)) {
+                document.write(N+ "<br>");
+                count++;
+            }
+            N++;
+        }
+    }
+</script>
+<button type="button" onclick="printPrimeNlist()">kiểm tra</button>
+</body>
+</html>
