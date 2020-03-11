@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function docso() {
+            let n = prompt("nhap mot so");
+            n=Number.parseInt(n);
+            // alert(doc1so(n));
+            alert(docso3cs(n));
+        }
+        function doc1so(n) {
+            switch (n) {
+                case 0: return "không";
+                case 1: return "một";
+                case 2: return "hai";
+                case 3: return "ba";
+                case 4: return "bốn";
+                case 5: return "năm";
+                case 6: return "sáu";
+                case 7: return "bảy";
+                case 8: return "tám";
+                case 9: return "chín";
+                default :return "không chính xác !";
+            }
+
+        }
+        function docso3cs(n) {
+let tram=Math.floor(n/100);
+let chuc=Math.floor((n/10))%10;
+let donvi=n%10;
+let str= "";
+str+=doc1so(tram)+"trăm";
+str+=doc1so(chuc)+"mươi";
+str+=doc1so(donvi);
+return  str;
+        }
+    </script>
+</head>
+<body>
+<button onclick="docso()">Nhap so</button>
+</body>
+</html>

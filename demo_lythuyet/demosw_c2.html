@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function tinh() {
+            let thangX = Number.parseInt(prompt("nhập tháng thứ  1"));
+            let thangY = Number.parseInt(prompt("nhập tháng thứ  2"));
+            let namX = prompt("nhập năm");
+            let namY = prompt("nhập năm");
+            let sT=0 ;
+            let s = 0;
+            for (let i = thangX; i <= thangY; i++) {
+                s += so_ngay1thang(i);
+
+            for (let j=namX;j<=namY;j++){
+                sT+=s+j;
+            }   }
+            alert(sT);
+        }
+
+        function so_ngay1thang(thang,) {
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    return 31;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    return 30;
+                case 2:
+                    // if (KTnamnhuan()) {
+                    //     return 29;
+                    // } else
+                        return 28;
+            }
+        }
+        // function tinhS() {
+        //     let namX = prompt("nhập năm");
+        //     let namY = prompt("nhập năm");
+        //     let sT=0 ;
+        //     for (let i=namX;i<=namY;i++){
+        //         sT+=tinh()+i;
+        //     }
+        //     alert(sT)
+        // }
+
+        //
+        // function KTnamnhuan() {
+        //     return ( nam % 4 === 0 && nam % 400 === 0 && nam % 100 !== 0);
+        // }
+    </script>
+</head>
+<body>
+<button onclick="tinh()">nhập tháng</button>
+</body>
+</html>

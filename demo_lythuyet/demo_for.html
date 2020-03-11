@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function calsum() {
+            let m=document.getElementById("m");
+            m= Number.parseInt(m.value);
+            let n=document.getElementById("n");
+            n= Number.parseInt(n.value);
+            let s=0 ,i;
+            for (i=m;i<=n;i++)
+                s+=i;
+            document.getElementById("sum").innerHTML="" +s;
+        }
+    </script>
+</head>
+<body>
+<div>
+    <p>Nhập m: <input type="text" id="m" value="0" onkeyup="calsum()"></p>
+    <p>Nhập n: <input type="text" id="n" value="0" onkeyup="calsum()"></p>
+    <p>Tổng là : <span id="sum">0</span></p>
+
+
+</div>
+</body>
+</html>
