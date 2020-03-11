@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="M.css">
+    <script>
+                function check() {
+            let n=document.getElementById("input").value;
+            n=Number.parseInt(n);
+            document.getElementById("ketqua").innerHTML="tháng" + n + "có" + so_ngay(n) +"ngày" ;
+        }
+        function so_ngay(n) {
+            switch (n) {
+                case  1:
+                case  3:
+                case  5:
+                case  7:
+                case  8:
+                case  10:
+                case  12:return 31;
+                case  4:
+                case  6:
+                case  9:
+                case  11:return 30;
+                case  2:return 28 +"hoặc"+29;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<table id="table_id"><caption>Tính số ngày trong tháng</caption>
+    <tr>
+        <td><input type="text" id="input" name="Nhập tháng">
+        </td>
+        <td><button onclick="check()">Tính số ngày</button>
+        </td>
+    </tr>
+</table>
+<div id="ketqua"></div>
+</body>
+</html>

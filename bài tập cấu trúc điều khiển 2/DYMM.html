@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function setRandomPosition() {
+            document.getElementById("no_hope").style.position = "absolute";
+            let x = Math.round(Math.random() * window.innerWidth);
+            let y = Math.round(Math.random()* window.innerHeight);
+            document.getElementById("no_hope").style.left = x + "px";
+            document.getElementById("no_hope").style.top = y + "px";
+        }
+
+    </script>
+
+</head>
+<body>
+<p>Làm Người Yêu Anh Nhé Bấy Bê <3</p>
+<input type="button" onclick="but_yes" value="Đồng Ý">
+<input type="button" id="no_hope" onmouseover="setRandomPosition()" value="Đéo">
+</body>
+</html>

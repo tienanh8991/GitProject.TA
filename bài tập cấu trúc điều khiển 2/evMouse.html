@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="evImages" src="https://www.soccer-for-kids.com/images/pokemon-soccer-ball.jpg" style="width: 200px">
+    <p style="color: coral" >Click button below to move the image to right</p>
+    <input type="button" onclick="moveRight()" value="ClickMe" style="color: coral"/>
+</form>
+<script>
+    let myImages = null;
+    myImages = document.getElementById("evImages");
+
+    function init() {
+        myImages = document.getElementById("evImages");
+        myImages.style.position = "relative";
+        myImages.style.left = "0px";
+    }
+
+    function moveRight() {
+        console.log(1);
+        myImages.style.left = parseInt(myImages.style.left) + 20 + 'px';
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>

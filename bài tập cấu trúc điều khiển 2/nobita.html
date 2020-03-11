@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="Ready()">
+<img id="nobita" src="nobita.png" style="position:absolute;left:0; top:0;" height="200" width="150">
+<script>
+    function moveUp() {
+        let act = document.getElementById('nobita');
+        act.style.top= parseInt(act.style.top) -10 +"px";
+    }
+    function moveDown() {
+        let act= document.getElementById('nobita');
+        act.style.top= parseInt(act.style.top) +10 +"px";
+    }
+    function moveLeft() {
+        let act= document.getElementById('nobita');
+        act.style.left= parseInt(act.style.left)-10 +"px";
+    }
+    function moveRight() {
+        let act= document.getElementById('nobita');
+        act.style.left= parseInt(act.style.left)+10 +"px";
+    }
+    function moveAct(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 40:
+                moveDown();
+                break;
+            case 38:
+                moveUp();
+                break;
+        }
+    }
+    function Ready() {
+        window.addEventListener('keydown' ,moveAct);
+    }
+</script>
+</body>
+</html>

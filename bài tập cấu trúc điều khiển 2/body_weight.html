@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input_W" placeholder="nhập cân nặng (kg )"/>
+<input type="text" id="input_H" placeholder="nhập chiều cao (m)"/>
+<input type="button" onclick="calculateBMI()" value="kết quả">
+<script>
+
+    function calculateBMI() {
+        let a = document.getElementById("input_W").value;
+        a = Number.parseFloat(a);
+        let b = document.getElementById("input_H").value;
+        b = Number.parseFloat(b);
+        let cBMI = a / (b * b);
+        if (cBMI < 18)
+            document.write("UnderWeight");
+        else if (cBMI < 25.0)
+            document.write("Normal");
+        else if (cBMI < 30.0)
+            document.write("OverWeight");
+        else
+            document.write("Obese");
+    }
+</script>
+</body>
+</html>
