@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+            padding: 3px;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const COlS = 10;
+    const ROWS = 10;
+    let arr = [];
+    let isGameOver = false;
+    let s = "<table>";
+    for (let i = 0; i < ROWS; i++) {
+        arr[i] = [];
+        s += "<tr>";
+        for (let j = 0; j < COlS; j++) {
+            arr[i][j] = "*";
+            s += "<td id='xo' onclick='choseXO(this , " + i + " , " + j + ")'></td>";
+        }
+        s += "</tr>";
+    }
+    s += "</table>";
+    document.write(s);
+    let turn = 1;
+
+    function choseXO(cell, x, y) {
+        if (isGameOver) {
+            return;
+        }
+
+        if (turn === 1 && !cell.innerHTML) {
+            cell.innerHTML = 'X';
+            turn = 2;
+            arr[x][y] = "X";
+        } else if (turn === 2 && !cell.innerHTML) {
+            cell.innerHTML = 'O';
+            turn = 1;
+            arr[x][y] = "O";
+        }
+        checkWin(cell, x, y);
+    }
+
+    function checkWin(cell, x, y) {
+
+        //check ngang
+        let i = 1;
+        let count = 1;
+        let j = 1;
+        while ((y + i) < COlS && arr[x][y + i] === cell.innerHTML) {
+            i++;
+            count++;
+        }
+
+        while (y - j >= 0 && arr[x][y - j] === cell.innerHTML) {
+            j++;
+            count++;
+        }
+
+        gameOver(count);
+
+        // check dọc
+        while ((x + i) < ROWS && arr[x + i][y] === cell.innerHTML) {
+            i++;
+            count++;
+        }
+
+        while (x - j >= 0 && arr[x - j][y] === cell.innerHTML) {
+            j++;
+            count++;
+        }
+
+        gameOver(count);
+
+        // check đường chéo trái
+
+        while ((y + j < COlS) && (x + i < ROWS) && (arr[x + i][y + j] === cell.innerHTML)) {
+            i++;
+            j++;
+            count++;
+        }
+        gameOver(count);
+
+        while ((y - j >= 0) && (x - i >= 0) && (arr[x - i][y - j] === cell.innerHTML)) {
+            i++;
+            j++;
+            count++;
+        }
+        gameOver(count);
+
+        while ((y - j >= 0) && (x + i < ROWS) && (arr[x + i][y - j] === cell.innerHTML)) {
+            i++;
+            j++;
+            count++;
+        }
+        gameOver(count);
+
+        // check đường chéo phải
+        while ((y + j < COlS) && (x - i >= 0) && (arr[x - i][y + j] === cell.innerHTML)) {
+            i++;
+            j++;
+            count++;
+        }
+        gameOver(count);
+
+        return true;
+    }
+
+    function gameOver(count) {
+        if (count === 5) {
+            alert("Game over");
+            isGameOver = true;
+        }
+    }
+
+
+</script>
+</body>
+</html>
