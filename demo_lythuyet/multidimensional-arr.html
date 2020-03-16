@@ -13,8 +13,7 @@
     <script>
         let myArray;
         let nRow, nColum;
-        let isPrimeNums = false ;
-
+        //khởi tạo mảng
         function initArray() {
             nRow = +prompt("nhập số dòng :");
             nColum = +prompt("nhập số cột :");
@@ -28,7 +27,7 @@
             }
 
         }
-
+        // hiển thị mảng
         function showArray() {
             let i, j;
             document.write("<table border='1'>");
@@ -41,7 +40,7 @@
             }
 
         }
-
+        // tính tổng hàng
         function calRowSum(rowIndex) {
             if (rowIndex <= 0 || rowIndex >= nRow) {
                 return 0;
@@ -52,7 +51,7 @@
             }
             return sum;
         }
-
+        // tính tổng cột
         function calColSum(columIndex) {
             if (columIndex <= 0 || columIndex >= nColum) {
                 return 0;
@@ -63,7 +62,7 @@
             }
             return sum;
         }
-
+        // tính tổng số chẵn
         function calEvensum() {
             let i, j;
             let sum = 0;
@@ -76,7 +75,7 @@
             }
             return sum;
         }
-
+        //tính tổng số lẻ
         function calOddsum() {
             let i, j;
             let sum = 0;
@@ -89,6 +88,7 @@
             }
             return sum;
         }
+        //tính tổng các phần tử là số chính phương
         function calSquareSum() {
             let i, j;
             let sum = 0;
@@ -101,6 +101,7 @@
             }
             return sum;
         }
+        // tính tổng các phần tử là số nguyên tố
         function calPrimeSum() {
             let i, j;
             let sum = 0;
@@ -113,6 +114,7 @@
             }
             return sum;
         }
+        let isPrimeNums = false ;
         function checkPrimeNums(n) {
             if (n < 2){
                 return false ;
