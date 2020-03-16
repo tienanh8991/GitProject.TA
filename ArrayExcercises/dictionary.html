@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function dictionary() {
+        let x = window.prompt("nhập từ ", "");
+        let e = ["hello", "thanks", "plese", "book", "goodbye"];
+        let v = ["xin chào", "cảm ơn", "làm ơn", "quyển sách", "tạm biệt"];
+        let result = "";
+        for (let i = 0; i < e.length; i++) {
+            if (x === e[i]) {
+                e[i] = result;
+                result = v[i];
+                alert(result);
+                return ;
+            }
+        }
+        return alert("not found");
+    }
+    dictionary();
+</script>
+</body>
+</html>
