@@ -91,7 +91,7 @@ function checkWin(cell, x, y) {
 
 function gameOver(count) {
     if (count === 3) {
-        alert("Game over");
+        alert("You Win !");
         isGameOver = true;
     }
 }
