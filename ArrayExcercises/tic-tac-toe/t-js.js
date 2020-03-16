@@ -63,7 +63,6 @@ function checkWin(cell, x, y) {
         j++;
         count++;
     }
-    gameOver(count);
 
     while ((y - j >= 0) && (x - i >= 0) && (arr[x - i][y - j] === cell.innerHTML)) {
         i++;
@@ -77,7 +76,6 @@ function checkWin(cell, x, y) {
         j++;
         count++;
     }
-    gameOver(count);
 
     while ((y + j < COlS) && (x - i >= 0) && (arr[x - i][y + j] === cell.innerHTML)) {
         i++;

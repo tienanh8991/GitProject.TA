@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="monthX_input">tháng bắt đầu
+<input type="text" id="monthY_input">tháng kết thúc
+<input type="text" id="yearX_input">năm bắt đầu
+<input type="text" id="yearY_input">năm kết thúc
+<button type="button" onclick="numOfdays()">kết quả</button>
+<script>
+    function numOfdays() {
+        let sum;
+        sum = numOfdaysYX() + numOfdaysYY() + numOfyear()*365 ;
+        console.log(sum)
+    }
+    function numOfdaysYX() {
+        let monthX = +document.getElementById("monthX_input").value;
+        let sX = 0;
+        for (let i = monthX; i <= 12; i++) {
+            sX += dayOf1month(i, year);
+        }
+    }
+    function numOfdaysYY() {
+        let monthY = +document.getElementById("monthX_input").value;
+        let sY = 0;
+        for (let j = 1; j <= monthY; j++) {
+            sY += dayOf1month(j, year);
+        }
+    }
+
+    function numOfyear() {
+        let yearX = +document.getElementById("yearX_input").value;
+        let yearY = +document.getElementById("yearY_input").value;
+        for (let k = yearX; k <= yearY; k++) {
+        }
+    }
+
+    function dayOf1month(month, year) {
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return 31;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return 30;
+            case 2:
+                if (checkleapYear(year))
+                    return 29;
+                else
+                    return 28;
+        }
+    }
+
+    function checkleapYear(year) {
+        return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+    }
+</script>
+</body>
+</html>
