@@ -36,14 +36,13 @@ function playGame(cell, x, y) {
 function checkWin(cell, x, y) {
     let i = 1;
     let count = 1;
-    let j = 1;
     while ((y + i) < COlS && arr[x][y + i] === cell.innerHTML) {
         i++;
         count++;
     }
 
-    while (y - j >= 0 && arr[x][y - j] === cell.innerHTML) {
-        j++;
+    while (y - i >= 0 && arr[x][y - i] === cell.innerHTML) {
+        i++;
         count++;
     }
     gameOver(count);
@@ -52,37 +51,41 @@ function checkWin(cell, x, y) {
         i++;
         count++;
     }
-    while (x - j >= 0 && arr[x - j][y] === cell.innerHTML) {
-        j++;
+    while (x - i >= 0 && arr[x - i][y] === cell.innerHTML) {
+        i++;
         count++;
     }
     gameOver(count);
 
-    while ((y + j < COlS) && (x + i < ROWS) && (arr[x + i][y + j] === cell.innerHTML)) {
-        i++;
+    let i2 = 1;
+    let count2 = 1;
+    let j = 1;
+
+    while ((y + j < COlS) && (x + i2 < ROWS) && (arr[x + i2][y + j] === cell.innerHTML)) {
+        i2++;
         j++;
-        count++;
+        count2++;
     }
 
-    while ((y - j >= 0) && (x - i >= 0) && (arr[x - i][y - j] === cell.innerHTML)) {
-        i++;
+    while ((y - j >= 0) && (x - i2 >= 0) && (arr[x - i2][y - j] === cell.innerHTML)) {
+        i2++;
         j++;
-        count++;
+        count2++;
     }
-    gameOver(count);
+    gameOver(count2);
 
-    while ((y - j >= 0) && (x + i < ROWS) && (arr[x + i][y - j] === cell.innerHTML)) {
-        i++;
+    while ((y - j >= 0) && (x + i2 < ROWS) && (arr[x + i2][y - j] === cell.innerHTML)) {
+        i2++;
         j++;
-        count++;
+        count2++;
     }
 
-    while ((y + j < COlS) && (x - i >= 0) && (arr[x - i][y + j] === cell.innerHTML)) {
-        i++;
+    while ((y + j < COlS) && (x - i2 >= 0) && (arr[x - i2][y + j] === cell.innerHTML)) {
+        i2++;
         j++;
-        count++;
+        count2++;
     }
-    gameOver(count);
+    gameOver(count2);
 
     return true;
 }
