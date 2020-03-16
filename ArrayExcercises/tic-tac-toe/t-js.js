@@ -8,7 +8,7 @@ for (let i = 0; i < ROWS; i++) {
     s += "<tr>";
     for (let j = 0; j < COlS; j++) {
         arr[i][j] = "*";
-        s += "<td id='xo' onclick='playGame(this , " + i + " , " + j + ")'></td>";
+        s += "<td onclick='playGame(this , " + i + " , " + j + ")'></td>";
     }
     s += "</tr>";
 }
