@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <button type="button" onclick="mToF()">M To F</button>
+    <button type="button" onclick="fToM()">F To M</button>
+</center>
+<script>
+    // hàm chuyển đổi metter sang feet
+    function mToF() {
+        let n = +prompt("nhập số metter :");
+        alert(n * 3.279 + " feet");
+    }
+
+    // hàm chuyển đổi feet sang metter
+    function fToM() {
+        let n = +prompt("nhập số feet :");
+        alert(n * 0.305 + " metters")
+    }
+</script>
+</body>
+</html>

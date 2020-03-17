@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let Constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function findConl() {
+        let starN = prompt("nhập tên ngôi sao :");
+        for (let i = 0; i < star.length; i++) {
+            if (starN === star[i]) {
+                return alert("chòm sao là : " + Constellation[i]);
+            }
+        } alert("not found ")
+    }
+    findConl();
+</script>
+</body>
+</html>
