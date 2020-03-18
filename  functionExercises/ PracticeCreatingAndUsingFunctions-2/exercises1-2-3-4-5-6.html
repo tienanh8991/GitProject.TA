@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // hàm tính bình phương 
+    function calSquareN() {
+        let x = +prompt("nhập số x :");
+        let s = x*x ;
+        document.write("x bình phương bằng : " + s + "<br>");
+    }
+    // hàm tính chu vi, diện tích hình tròn
+    function calCircle() {
+        let a = +prompt("nhập bán kính hình tròn :");
+        document.write("chu vi hình tròn bằng : " + 2*a*Math.PI + "<br>");
+        document.write("diện tích hình tròn bằng : " + Math.PI*a*a + "<br>");
+
+    }
+    // hàm tính giai thừa
+    function calfractorialRec(n) {
+        if (n === 1)
+            return 1;
+        else
+           return n * calfractorialRec(n - 1);
+    } document.write("n! bằng : " + n * calfractorialRec(n - 1) + "<br>") ;
+
+    // hàm kiểm tra  ký tự số
+    function checkNumber(m) {
+        return Number.isInteger(m);
+    }
+
+    // hàm tìm giá trị nhỏ nhất trong ba số
+    function findMin(n,m,p) {
+        let min = Math.min(n,m,p);
+        document.write("min = " + min);
+    }
+    // hàm kiểm tra số nguyên dương
+    function checkINums(n) {
+        return Number.isInteger(n) && n > 0;
+    }
+
+    calSquareN();
+    calCircle();
+    calfractorialRec();
+</script>
+</body>
+</html>
