@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Celcius(n) {
+        this.n = n ;
+
+        this.switchToF = function () {
+            return (1.8*this.n - 32);
+        };
+        this.switchToK = function () {
+            return (this.n + 213.15);
+        };
+        this.show =function () {
+            alert(this.n + " độ C bằng : " + this.switchToF() + " độ F");
+            alert(this.n + " độ C bằng : " + this.switchToK() + " độ K");
+        }
+    }
+    let n = +prompt("nhập số độ C cần chuyển đổi :");
+    let celius = new Celcius(n);
+    if (n < -273){
+        alert("vui lòng nhập lại :");
+    }else
+    celius.show();
+</script>
+</body>
+</html>
