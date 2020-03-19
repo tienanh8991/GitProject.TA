@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCan" width="750" height="350" style="border: 1px solid violet"></canvas>
+<script>
+    function Rectangle(a, b) {
+        this.a = a;
+        this.b = b;
+
+        this.calPerimeter = function () {
+           return  (this.a + this.b) * 2;
+        };
+        this.calArea = function () {
+            return (this.a * this.b) ;
+        };
+        this.show = function () {
+            alert("chu vi hình chữ nhật bằng : " + this.calPerimeter());
+            alert("diện tích hình chữ nhật bằng : " + this.calArea());
+        };
+        this.drawRectangle = function () {
+            let canvas = document.getElementById("myCan");
+            let context = canvas.getContext("2d");
+
+            context.beginPath();
+            context.rect(188, 0, this.a, this.b);
+            context.fillStyle = "orange";
+            context.fill();
+        }
+    }
+
+    function main() {
+        let a = +prompt("nhập chiều dài :");
+        let b = +prompt("nhập chiều rộng :");
+        let myRect = new Rectangle(a, b);
+        myRect.show();
+        myRect.drawRectangle();
+    }
+
+    main();
+</script>
+</body>
+</html>
