@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #iphone {
+            border: 1px solid #CDCDCD;
+            float:left;
+            margin-bottom: 5px;
+        }
+        #samsung{
+            border: 1px solid #CDCDCD;
+            float: right;
+        }
+         .inbox , .outbox{
+            overflow: auto;
+            background-color: burlywood;
+            width: 200px; height: 80px;
+            border: 1px solid brown;
+             padding: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mobile" id="iphone">
+    <div class="titleName" id="iphoneName">mobile1</div>
+    <div class="inbox" id="iphoneInbox">inbox</div>
+    <div class="outbox" id="iphoneOutbox">outbox</div>
+    <label>
+        <input class="massage" id="iphoneM" oninput="mobile1.writeM(this.value)" placeholder="massage">
+    </label>
+    <button class="sendM" onclick="sendMess(mobile1,mobile2)" >send</button>
+</div>
+<div class="mobile" id="samsung">
+    <div class="titleName" id="samsungName">mobile2</div>
+    <div class="inbox" id="samsungInbox">inbox</div>
+    <div class="outbox" id="samsungOutbox">outbox</div>
+    <label>
+        <input class="massage" id="samsungM" oninput="mobile2.writeM(this.value)" placeholder="massage">
+    </label>
+    <button class="sendM" onclick="sendMess(mobile2,mobile1)">send</button>
+</div>
+<script>
+    class Mobile{
+        constructor(name) {
+            this.name = name ;
+            this.battery = 100 ;
+            this.massage = " ";
+            this.inbox = [];
+            this.outbox = [];
+        }
+        writeM(value){
+            this.massage = value ;
+        }
+        receiveM(name,msg){
+            this.inbox.push(name+":"+msg);
+        }
+        sendM(mobile){
+            mobile.receiveM(this.name,this.massage);
+            this.outbox.push(this.massage);
+        }
+    }
+    let mobile1 = new Mobile("Iphone");
+    let mobile2 = new Mobile("SamSung");
+
+    function sendMess(mobile1,mobile2) {
+        mobile1.sendM(mobile2);
+        document.getElementById("iphoneInbox").innerHTML = mobile1.inbox;
+        document.getElementById("iphoneOutbox").innerHTML = mobile1.outbox;
+        document.getElementById("samsungInbox").innerHTML = mobile2.outbox;
+        document.getElementById("samsungInbox").innerHTML = mobile2.inbox;
+        document.getElementById("iphoneM").value = "";
+        document.getElementById("samsungM").value = "";
+
+    }
+</script>
+</body>
+</html>
