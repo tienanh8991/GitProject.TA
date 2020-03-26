@@ -69,8 +69,8 @@ class Brick {
     }
 }
 
-let ball = new Ball(20, canvas.height/3, 15, 2, 3);
-let bars = new Bars(70, 10, 0, canvas.height - 10, 10);
+let ball = new Ball(20, canvas.height/3, 10, 2,4 );
+let bars = new Bars(70, 10, canvas.width/3+30, canvas.height - 10, 15);
 let brick = new Brick(50, 10, 25, 3, 5);
 let isGameOver = false;
 let isGameWin = false;
