@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhập trong khoảng ");
+    let m = +prompt("nhập số ");
+    let k = Math.round(Math.random()*n);
+    console.log(k);
+    while (m <= n ){
+        if (m === k)
+            alert("chính xác");
+        // }else alert("không chính xác");
+        m++ ;
+    }
+</script>
+</body>
+</html>
